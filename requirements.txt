@@ -4,3 +4,4 @@ ipykernel
 nbformat
 wget
 sklearn
+statsmodels
