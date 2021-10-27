@@ -1,0 +1,194 @@
+% !TEX root = PSanté_03_présentation.tex PrésentationDiapoP3.tex
+
+\usefonttheme{serif}
+\usepackage{fontspec}
+	\setmainfont{TeX Gyre Heros}
+\usepackage{unicode-math}
+\usepackage{lualatex-math}
+	\setmathfont{TeX Gyre Termes Math}
+\usepackage{polyglossia}
+\setdefaultlanguage[frenchpart=false]{french}
+\setotherlanguage{english}
+\usepackage{microtype}
+\usepackage[locale = FR,
+            separate-uncertainty,
+            multi-part-units = single,
+            range-units = single]{siunitx}
+	\DeclareSIUnit\an{an}
+  \DeclareSIUnit{\octet}{o}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\graphicspath{{./Figures/}}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{multicol}
+    \newcolumntype{L}{>{\raggedright\arraybackslash}X}
+    \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\usepackage{tikz}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{overlay-beamer-styles}
+\usepackage{subcaption}
+\usepackage[]{animate}
+\usepackage{float}
+\usepackage{csquotes}
+
+\usetheme[secheader
+         ]{Boadilla}
+\usecolortheme{seagull}
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}{-}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}{}
+\setbeamerfont{framesubtitle}{size=\large}
+\setbeamertemplate{section in toc}[sections numbered]
+%\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\title[Concevez une application au service de la santé publique]{Projet 3 : Concevez une application au service de la santé publique}
+\author[Lancelot \textsc{Leclercq}]{Lancelot \textsc{Leclercq}} 
+\institute[]{}
+\date[]{\small{novembre 2021}}
+
+%\AtBeginSection[]{
+%  \begin{frame}
+%  \vfill
+%  \centering
+%    \usebeamerfont{title}\insertsectionhead\par%
+%  \vfill
+%  \end{frame}
+%}
+
+\begin{document}
+\setbeamercolor{background canvas}{bg=gray!20}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\subsection{Problématique}
+\begin{frame}{\insertsubsection}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \begin{itemize}
+        \item Application au service de la santé publique
+        \item[]
+        \item Idées d'application en lien avec l'alimentation
+      \end{itemize}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \includegraphics[width=.8\textwidth]{./Sante-publique-France-logo.pdf}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Jeu de données} 
+\begin{frame}{\insertsubsection}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \begin{itemize}
+        \item Jeu de données issu de Open Food Facts
+        \item[]
+        \item Base de donnée ouverte et participative
+        \item[]
+        \item Repertorie les ingrédients, les allergènes, composition nutritionnelle, les labels, l'origine, etc
+        \item[]
+        \item Grosse base de données (environ \qty{4.5}{\giga\octet})
+      \end{itemize}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \centering
+      \includegraphics[width=.8\textwidth]{./openfoodfacts-logo-en.pdf}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+\section{Nettoyage du jeu de données}
+  \subsection{Produits vendus en France}
+    \begin{frame}{\insertsubsection}
+      \begin{columns}
+        \begin{column}{.5\textwidth}
+          \begin{itemize}
+            \item Sélection des produits vendus en France
+          \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+          \begin{itemize}
+            \item Réduction des colonnes dans lesquelles on a moins de 1\% de données
+          \end{itemize}
+        \end{column}
+      \end{columns}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{DataNbDrop.pdf}
+      \end{figure}
+    \end{frame}
+  
+  \subsection{Nettoyage des outliers}
+    \begin{frame}{\insertsubsection}
+      \begin{columns}
+        \begin{column}{.3\textwidth}
+          \begin{itemize}
+            \item Valeurs extrèmes pour :
+            \begin{itemize}
+              \item Quantité servie
+              \item Empreinte carbone
+              \item Énergie
+            \end{itemize}
+            \item[]
+            \item Des valeurs très importantes là où le nombre de valeurs est très faible
+            \item[]
+            \item Nous écartons ces valeurs lorsqu'elles sont en dehors du quartile qui contient 99\% des valeurs. 
+          \end{itemize}
+        \end{column}
+        \begin{column}{.7\textwidth}
+          \begin{figure}
+            \includegraphics[width=\textwidth]{subplotHistNettoyage.pdf}
+          \end{figure}  
+        \end{column}        
+      \end{columns}
+    \end{frame}
+
+  \subsection{Données redondantes}
+    \begin{frame}{\insertsubsection}
+      
+    \end{frame}
+
+\section{Exploration du jeu de données}
+
+\section{Idée d'application}
+\begin{frame}
+  \begin{itemize}
+    \item Pouvoir scanner un produit et trouver des alternatives similaires de meilleure qualité
+    \begin{itemize}
+      \item Meilleures pour la santé (nutriscore plus élevé)
+      \begin{itemize}
+        \item Avec moins d'additifs (nombre d'additifs inférieurs)
+      \end{itemize}
+      \item Meilleures pour l'environement (ecoscore plus élevé)
+      \begin{itemize}
+        \item Origine plus proche (France, Europe)
+      \end{itemize}
+      \item Voir les deux
+      
+    \end{itemize}
+    \item[]
+    \item Idéalement pouvoir choisir selon un régime alimentaire particulier
+    \begin{itemize}
+      \item Végétarien
+      \item Vegan
+      \item Halal
+      \item Kasher
+      \item Sans gluten
+      \item etc
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+
+\end{document}
