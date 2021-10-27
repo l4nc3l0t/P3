@@ -107,24 +107,28 @@
 \end{frame}
 
 
-
 \section{Nettoyage du jeu de données}
   \subsection{Produits vendus en France}
     \begin{frame}{\insertsubsection}
-      \begin{columns}
-        \begin{column}{.5\textwidth}
+      \begin{columns}[T]
+        \begin{column}{.4\textwidth}
           \begin{itemize}
             \item Sélection des produits vendus en France
+            \item \num{850000} entrées sur les 2 milliards d'origine 
           \end{itemize}
         \end{column}
-        \begin{column}{.5\textwidth}
+        \begin{column}{.6\textwidth}
           \begin{itemize}
-            \item Réduction des colonnes dans lesquelles on a moins de 1\% de données
+            \item Suppression des colonnes dans lesquelles on a moins de 1\% de données 
+et des colonnes contenant des tags et des versions anglaises qui sont redondantes avec les 
+colonnes du mêmes nom
+            \item 57 colonnes restantes sur les 186 d'origine
           \end{itemize}
         \end{column}
       \end{columns}
+      \vfill
       \begin{figure}
-        \includegraphics[width=\textwidth]{DataNbDrop.pdf}
+        \includegraphics[width=.75\textwidth]{DataDropFinal.pdf}
       \end{figure}
     \end{frame}
   
@@ -153,9 +157,41 @@
       \end{columns}
     \end{frame}
 
+    \begin{frame}{\insertsubsection}
+      \begin{columns}
+        \begin{column}{.3\textwidth}
+          \begin{itemize}
+            \item On obtient des distributions plus intéressantes
+            \item[]
+            \item Fonctionnement assez similaire des différents types d'énergies
+          \end{itemize}
+        \end{column}
+        \begin{column}{.7\textwidth}
+          \begin{figure}
+            \includegraphics[width=\textwidth]{subplotHistQ99.pdf}
+          \end{figure}
+        \end{column}
+      \end{columns}
+    \end{frame}
+
   \subsection{Données redondantes}
     \begin{frame}{\insertsubsection}
-      
+      \begin{columns}
+        \begin{column}{.4\textwidth}
+          \begin{itemize}
+            \item Mêmes valeurs energy\_100g et energy-kj\_100g
+            \item[]
+            \item Variation pour ce qui est de l'energie en kcal pour 100g
+            \item[]
+            \item Nous n'allons garder que les colonnes avec des unités d'énergie : kcal et kj
+          \end{itemize}
+        \end{column}
+        \begin{column}{.6\textwidth}
+          \begin{figure}
+            \includegraphics[width=.9\textwidth]{EnergiesScat.pdf}
+          \end{figure}
+        \end{column}
+      \end{columns}
     \end{frame}
 
 \section{Exploration du jeu de données}
