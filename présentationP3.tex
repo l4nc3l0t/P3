@@ -215,7 +215,132 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}{\insertsubsection}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item Observation du nombre d'occurences de chaques catégories de nutriscore
+        \item[]
+        \item Diagramme circulaire permet de visualiser les proportions
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{NutriPie}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \subsection{Analyse bivariée}
+\begin{frame}{\insertsubsection}
+  \begin{columns}
+    \begin{column}{.55\textwidth}
+      \begin{itemize}
+        \item Les catégories du nutriscore semblent corrélées avec le score
+        \item[]
+        \item Vérification par ANOVA à une dimension
+        \item H0 les moyennes des différentes catégories ne varient pas en fonction du score
+      \end{itemize}
+      \begin{table}
+        \tiny
+        \input{./Tableaux/ANOVANutriScoreGrade}
+        \caption{Résultats de l'ANOVA à une dimension entre le score du nutriscore et ses catégories}
+      \end{table}
+      \begin{itemize}
+        \item p-value \qty{< 5}{\percent} on rejette l'hypothèse pour chaque catégories
+      \end{itemize}
+    \end{column}
+    \begin{column}{.45\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{NutriBox}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsubsection{Régressions}
+\begin{frame}{\insertsubsubsection}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item La matrice des corrélations nous permet d'observer quelles variables
+        semblent fonctionner de façon similaire
+        \item[]
+        \item Nous allons faire quelques regressions entre ces variables proches
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=.98\textwidth]{HeatmapNum}
+    \end{column}
+  \end{columns}  
+\end{frame}
+
+\begin{frame}{\insertsubsubsection}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{SelReg}
+        \includegraphics[width=\textwidth]{GrasReg}
+      \end{figure}      
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{SucreReg}
+        \includegraphics[width=\textwidth]{EnergyFatReg}
+      \end{figure}      
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Analyse Multivariée}
+\begin{frame}{\insertsubsection}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item Régression multiple entre le nutriscore et les variables
+        sucre, gras, sel et energie
+        \item[]
+        \item H0 les moyennes des variables sont égales entre elles
+        ainsi qu'avec celle du nutriscore
+        \item[]
+        \item p-value \qty{< 5}{\percent} les variables ne varient donc pas très similairement
+        \item[]
+        \item Nous allons tout de même réaliser quelques graphiques des régressions
+        entre Nutriscore et chaques variables 
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{table}
+        \tiny
+        \input{./Tableaux/MultiReg}
+      \end{table}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsubsection{Régression}
+\begin{frame}{\insertsubsubsection}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{NutriEnergyReg}
+        \includegraphics[width=\textwidth]{NutriSucreReg}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{NutriGrasReg}
+        \includegraphics[width=\textwidth]{NutriSelReg}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsubsection{ACP}
+\begin{frame}{\insertsubsubsection}
+  
+\end{frame}
 
 \section{Idée d'application}
 \begin{frame}
