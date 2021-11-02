@@ -156,13 +156,13 @@
 \end{frame}
 
 \begin{frame}{\insertsubsection}
-Développer l'aspect participatif en incrémentant des données dans la base de données
+  Développer l'aspect participatif en incrémentant des données dans la base de données
   \begin{itemize}
     \item[]
     \item Beaucoup de lacune dans les données
           \begin{itemize}
             \item[] Implémenter un système de reconnaissance d'image
-                  permettant d'extraire les données manquantes des photos des étiquettes
+              permettant d'extraire les données manquantes des photos des étiquettes
           \end{itemize}
     \item[]
     \item Permettre de renseigner le prix de l'aliment et  de comparer le prix
@@ -172,10 +172,10 @@ Développer l'aspect participatif en incrémentant des données dans la base de 
             \item[]
             \item Création de listes automatique d'aliments similaires de meilleure qualité à partir des listes établies
             \item[]
-            \item Pouvoir comparer le prix des paniers/listes entre elles permettrait aux ménages de voir 
-              la différence de budget entre différents paniers de qualités variées 
-              et pouvoir choisir quel type d'alimentation il veulent/peuvent s'offrir
-              en fonction de la part du pouvoir d'achat qu'ils sont prêt à mettre dans l'alimentation
+            \item Pouvoir comparer le prix des paniers/listes entre elles permettrait aux ménages de voir
+                  la différence de budget entre différents paniers de qualités variées
+                  et pouvoir choisir quel type d'alimentation il veulent/peuvent s'offrir
+                  en fonction de la part du pouvoir d'achat qu'ils sont prêt à mettre dans l'alimentation
           \end{itemize}
   \end{itemize}
 \end{frame}
@@ -295,6 +295,16 @@ Développer l'aspect participatif en incrémentant des données dans la base de 
         \item Observation du nombre d'occurences de chaques catégories de nutriscore
         \item[]
         \item Diagramme circulaire permet de visualiser les proportions
+        \item[]
+          \begin{itemize}
+            \item \qty{50}{\percent} des aliments sont de catégorie D ou E
+            \item \qty{75}{\percent} sont de catégorie C, D ou E
+            \item seulemnt 1/4 des produits sont de catégorie A ou B
+          \end{itemize}
+        \item[]
+        \item Il n'y a qu'une chance sur 4 de tirer un produit de bonne qualité au hasard
+        \item[]
+        \item Permettre au consommateur de mieux choisir ses aliments permettra d'améliorer la santé publique
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -332,7 +342,7 @@ Développer l'aspect participatif en incrémentant des données dans la base de 
   \end{columns}
 \end{frame}
 
-\subsubsection{Régressions}
+\subsubsection{Matrice des corrélations}
 \begin{frame}{\insertsubsubsection}
   \begin{columns}
     \begin{column}{.5\textwidth}
@@ -349,24 +359,25 @@ Développer l'aspect participatif en incrémentant des données dans la base de 
   \end{columns}
 \end{frame}
 
+\subsubsection{Régressions}
 \begin{frame}{\insertsubsubsection}
   \begin{columns}
     \begin{column}{.5\textwidth}
       \begin{figure}
         \includegraphics[width=\textwidth]{SelReg.pdf}
-        \includegraphics[width=\textwidth]{GrasReg.pdf}
+        \includegraphics[width=\textwidth]{EnergyFatReg.pdf}
       \end{figure}
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{figure}
         \includegraphics[width=\textwidth]{SucreReg.pdf}
-        \includegraphics[width=\textwidth]{EnergyFatReg.pdf}
+        \includegraphics[width=\textwidth]{GrasReg.pdf}
       \end{figure}
     \end{column}
   \end{columns}
 \end{frame}
 
-\subsection{Analyse Multivariée}
+\subsection{Analyse multivariée : nutriscore et variables sucre, sel, gras et energie}
 \begin{frame}{\insertsubsection}
   \begin{columns}
     \begin{column}{.5\textwidth}
@@ -377,7 +388,7 @@ Développer l'aspect participatif en incrémentant des données dans la base de 
         \item H0 les moyennes des variables sont égales entre elles
               ainsi qu'avec celle du nutriscore
         \item[]
-        \item p-value \qty{< 5}{\percent} les variables ne varient donc pas très similairement
+        \item p-value \qty{< 5}{\percent} les variables ne sont donc pas très similaires
         \item[]
         \item Nous allons tout de même réaliser quelques graphiques des régressions
               entre Nutriscore et chaques variables
@@ -465,22 +476,25 @@ Développer l'aspect participatif en incrémentant des données dans la base de 
 \section{Conclusion}
 \begin{frame}
   \begin{itemize}
-    \item Base de donnée très conséquente
+    \item Jeu de données important
+    \begin{itemize}
+      \item Malgrès les lacunes il y a énormément d'informations sur les produits
+      \item[]
+      \item Permet de faire des choix précis au niveau du type d'alimentation dans l'application
+    \end{itemize}
     \item[]
-    \item Beaucoup de données manquantes
+    \item Présences de liens vers des étiquettes dans la base de donnée permettrait d'entraîner un modèle de reconnaissance
+    d'images afin d'implémenter la lecture des éléments manquants 
     \item[]
-    \item Quelques corrélations
-    \item[]
-    \item L'ACP permet de visualiser un peu mieux les liens entre variables
-    \item[]
-    \item Du potentiel pour une application qui permettrait d'améliorer son alimentation en choisissant des aliments :
+    \item L'ACP permet de mieux visualiser les liens entre variables
           \begin{itemize}
-            \item Avec un nutriscore plus élevé
-            \item Avec un nombre d'additifs inférieurs
-            \item Avec un ecoscore plus élevé
-            \item Ayant une origine plus proche (France, Europe)
-            \item En fonction des labels pour pouvoir préciser son type de régime alimentaire
+            \item Permet de catégoriser les aliments selon des critères plus larges que les variables
+            \item[]
+            \item Utile pour regrouper des produits et permettre de proposer des listes pertinentes dans l'application
           \end{itemize}
+    \item[]
+    \item Face aux maladies dites de civilisation (diabète, obésité, etc), permettre aux consommateurs
+          de mieux se nourrir pourra participer à l'amélioration de la santé publique
   \end{itemize}
 \end{frame}
 
