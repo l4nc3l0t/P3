@@ -159,7 +159,7 @@
   Développer l'aspect participatif en incrémentant des données dans la base de données
   \begin{itemize}
     \item[]
-    \item Beaucoup de lacune dans les données
+    \item Beaucoup de lacunes dans les données
           \begin{itemize}
             \item[] Implémenter un système de reconnaissance d'image
               permettant d'extraire les données manquantes des photos des étiquettes
@@ -349,8 +349,16 @@
       \begin{itemize}
         \item La matrice des corrélations nous permet d'observer quelles variables
               semblent fonctionner de façon similaire
+              \begin{itemize}
+                \item l'énergie comme (vu durant le nettoyage)
+                \item l'énergie avec le gras
+                \item le gras et le gras saturé
+                \item les carbohydrates et le sucre
+                \item le sel et le sodium
+              \end{itemize}
         \item[]
-        \item Nous allons faire quelques regressions entre ces variables proches
+        \item Nous allons faire quelques regressions entre ces variables qui semblent fonctionner
+              de pair
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -477,14 +485,14 @@
 \begin{frame}
   \begin{itemize}
     \item Jeu de données important
-    \begin{itemize}
-      \item Malgrès les lacunes il y a énormément d'informations sur les produits
-      \item[]
-      \item Permet de faire des choix précis au niveau du type d'alimentation dans l'application
-    \end{itemize}
+          \begin{itemize}
+            \item Malgrès les lacunes il y a énormément d'informations sur les produits
+            \item[]
+            \item Permet de faire des choix précis au niveau du type d'alimentation dans l'application
+          \end{itemize}
     \item[]
     \item Présences de liens vers des étiquettes dans la base de donnée permettrait d'entraîner un modèle de reconnaissance
-    d'images afin d'implémenter la lecture des éléments manquants 
+          d'images afin d'implémenter la lecture des éléments manquants
     \item[]
     \item L'ACP permet de mieux visualiser les liens entre variables
           \begin{itemize}
