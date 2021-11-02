@@ -52,14 +52,14 @@
 \institute[]{}
 \date[]{\small{2 novembre 2021}}
 
-%\AtBeginSection[]{
-%  \begin{frame}
-%  \vfill
-%  \centering
-%    \usebeamerfont{title}\insertsectionhead\par%
-%  \vfill
-%  \end{frame}
-%}
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+    \usebeamerfont{title}\insertsectionhead\par%
+  \vfill
+  \end{frame}
+}
 
 \begin{document}
 \setbeamercolor{background canvas}{bg=gray!20}
@@ -137,7 +137,7 @@
   \begin{columns}
     \begin{column}{.3\textwidth}
       \begin{itemize}
-        \item Valeurs extrèmes pour :
+        \item Valeurs extrêmes pour :
               \begin{itemize}
                 \item Quantité servie
                 \item Empreinte carbone
@@ -417,19 +417,32 @@
     \item[]
     \item Implémenter un système de reconnaissance d'image
           permettant d'extraire les données manquantes des photos des étiquettes
-    \item[] 
-    \item Pouvoir renseigner le prix de l'aliment et permettre de comparer le prix 
+    \item[]
+    \item Pouvoir renseigner le prix de l'aliment et permettre de comparer le prix
           entre les aliments selon la qualité
-    \begin{itemize}
-      \item[] Comparer le prix d'un panier 1er prix avec celui d'un panier composé de produits
-           de meilleure qualité afin de permettre aux ménages de voir la 
-          différence entre des paniers de qualité différentes et pouvoir choisir
-          quel type d'alimentation il veulent en fonction de la part du pouvoir d'achat 
-          qu'ils sont prêt à mettre dans l'alimentation
-    \end{itemize}
+          \begin{itemize}
+            \item[] Comparer le prix d'un panier 1er prix avec celui d'un panier composé de produits
+              de meilleure qualité afin de permettre aux ménages de voir la
+              différence entre des paniers de qualité différentes et pouvoir choisir
+              quel type d'alimentation il veulent en fonction de la part du pouvoir d'achat
+              qu'ils sont prêt à mettre dans l'alimentation
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
 \section{Conclusion}
+\begin{frame}
+  \begin{itemize}
+    \item Base de donnée très conséquente
+    \item[]
+    \item Beaucoup de données manquantes
+    \item[]
+    \item Quelques corrélations
+    \item[]
+    \item L'ACP permet de visualiser un peu mieux les liens entre variables
+    \item[]
+    \item Du potentiel pour une application qui permettrait d'améliorer son alimentation
+  \end{itemize}
+\end{frame}
 
 \end{document}
