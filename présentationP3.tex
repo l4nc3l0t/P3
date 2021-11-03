@@ -68,7 +68,7 @@
 \end{frame}
 
 \begin{frame}{Sommaire}
-  \Large 
+  \Large
   \begin{columns}
     \begin{column}{.7\textwidth}
       \tableofcontents[hideallsubsections]
@@ -209,7 +209,7 @@
   \end{columns}
   \vfill
   \begin{figure}
-    \includegraphics[width=.75\textwidth]{DataDropFinal.pdf}
+    \includegraphics[width=.74\textwidth]{DataDropFinal.pdf}
   \end{figure}
 \end{frame}
 
@@ -227,7 +227,9 @@
         \item[]
         \item Des valeurs très importantes là où le nombre de valeurs est très faible
         \item[]
-        \item Nous écartons ces valeurs lorsqu'elles sont en dehors du quartile qui contient 99\% des valeurs.
+        \item Nous écartons ces valeurs lorsqu'elles sont en dehors du quartile qui contient 99\% des valeurs
+        \item[] 
+        \item Données pour 100g conservées uniquement entre 0 et 100
       \end{itemize}
     \end{column}
     \begin{column}{.7\textwidth}
@@ -285,7 +287,7 @@
     \tiny
     \input{./Tableaux/StatsNum1.tex}
     \input{./Tableaux/StatsNum2.tex}
-    \input{./Tableaux/StatsNum3.tex}
+    \resizebox{\textwidth}{!}{\input{./Tableaux/StatsNum3.tex}}
     \caption{Tableaux des statistiques sur chaques variables numériques}
   \end{table}
 \end{frame}
